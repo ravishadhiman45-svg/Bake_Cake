@@ -1,18 +1,19 @@
-import ScrollyCanvas from "./components/ScrollyCanvas";
-import Projects from "./components/Projects";
-import Experience from "./components/Experience";
 import NavBar from "./components/NavBar";
+import HeroSection from "./components/HeroSection";
+import MenuSection from "./components/MenuSection";
+import PromotionalSection from "./components/PromotionalSection";
+import OurPromiseSection from "./components/OurPromiseSection";
+import NewsletterSection from "./components/NewsletterSection";
 
 export default function App() {
   return (
-    <main className="bg-[#121212] min-h-screen">
+    <main className="min-h-screen bg-white">
       <NavBar />
-      <ScrollyCanvas />
-      <Experience />
-      <Projects />
-      <footer className="py-12 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} Rajesh Chityal.
-      </footer>
+      <HeroSection />
+      <MenuSection />
+      <PromotionalSection />
+      <OurPromiseSection />
+      <NewsletterSection />
     </main>
   );
 }

@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  ShoppingCart,
-  User,
-  MapPin,
-  Search,
-  Menu,
-  X,
-} from "lucide-react";
+import { ShoppingCart, User, MapPin, Search, Menu, X } from "lucide-react";
 
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,14 +13,14 @@ const NavBar = () => {
         (position) => {
           setLocation(
             `${position.coords.latitude.toFixed(
-              2
-            )}, ${position.coords.longitude.toFixed(2)}`
+              2,
+            )}, ${position.coords.longitude.toFixed(2)}`,
           );
           setShowModal(false);
         },
         () => {
           alert("Unable to fetch location");
-        }
+        },
       );
     }
   };
@@ -36,10 +29,8 @@ const NavBar = () => {
     <>
       <nav className="bg-[#fd3f5a] text-white px-4 md:px-6">
         <div className="container mx-auto flex justify-between items-center gap-4 md:gap-8 h-20">
-          
           {/* LEFT SIDE */}
           <div className="flex shrink-0 gap-3 md:gap-4 items-center">
-            
             {/* BIGGER LOGO */}
             <img
               src="/assets/whiteLogo1.png"
@@ -95,10 +86,7 @@ const NavBar = () => {
           </ul>
 
           {/* MOBILE MENU BUTTON */}
-          <button
-            className="md:hidden"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
+          <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X size={30} /> : <Menu size={30} />}
           </button>
         </div>
@@ -118,7 +106,6 @@ const NavBar = () => {
         {/* MOBILE MENU */}
         {menuOpen && (
           <div className="md:hidden bg-[#fd3f5a] rounded-md p-4 mb-4 space-y-4">
-            
             <div
               onClick={() => setShowModal(true)}
               className="flex items-center gap-3 cursor-pointer"
@@ -140,12 +127,51 @@ const NavBar = () => {
         )}
       </nav>
 
+      {/* WAVY DIVIDER */}
+      <div className="w-full relative z-10">
+        <div className="absolute top-0 left-0 w-full z-50 rotate-180">
+          <svg
+            viewBox="0 0 1440 120"
+            preserveAspectRatio="none"
+            className="w-full h-7 md:h-9"
+          >
+            <path
+              fill="#fd3f5a"
+              d="
+        M0,60
+        C25,35 50,35 75,60
+        C100,85 125,85 150,60
+        C175,35 200,35 225,60
+        C250,85 275,85 300,60
+        C325,35 350,35 375,60
+        C400,85 425,85 450,60
+        C475,35 500,35 525,60
+        C550,85 575,85 600,60
+        C625,35 650,35 675,60
+        C700,85 725,85 750,60
+        C775,35 800,35 825,60
+        C850,85 875,85 900,60
+        C925,35 950,35 975,60
+        C1000,85 1025,85 1050,60
+        C1075,35 1100,35 1125,60
+        C1150,85 1175,85 1200,60
+        C1225,35 1250,35 1275,60
+        C1300,85 1325,85 1350,60
+        C1375,35 1400,35 1440,60
+
+        L1440,120
+        L0,120
+        Z
+      "
+            />
+          </svg>
+        </div>
+      </div>
+
       {/* LOCATION MODAL */}
       {showModal && (
         <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50 px-4">
-          
           <div className="bg-white w-full max-w-md rounded-xl p-6 relative text-black">
-            
             {/* CLOSE BUTTON */}
             <button
               onClick={() => setShowModal(false)}
@@ -154,9 +180,7 @@ const NavBar = () => {
               <X />
             </button>
 
-            <h2 className="text-2xl font-bold mb-5">
-              Select Your Location
-            </h2>
+            <h2 className="text-2xl font-bold mb-5">Select Your Location</h2>
 
             {/* INPUT */}
             <input
