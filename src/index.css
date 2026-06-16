@@ -3,6 +3,33 @@
 :root {
   --background: #121212;
   --foreground: #ededed;
+  --color-primary-50: #fff0f2;
+  --color-primary-100: #ffe0e4;
+  --color-primary-200: #ffc5ce;
+  --color-primary-300: #ff9dae;
+  --color-primary-400: #ff6880;
+  --color-primary-500: #fd3f5a;
+  --color-primary-600: #e81f40;
+  --color-primary-700: #c3163b;
+  --color-primary-800: #9f1536;
+  --color-primary-900: #861532;
+  --color-primary-950: #4a0515;
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+  --color-sidebar-bg: #0f172a;
+  --color-sidebar-hover: #1e293b;
+  --color-sidebar-active: rgba(253, 63, 90, 0.15);
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -34,4 +61,47 @@ code {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+@theme {
+  --color-primary-50: #fff0f2;
+  --color-primary-100: #ffe0e4;
+  --color-primary-200: #ffc5ce;
+  --color-primary-300: #ff9dae;
+  --color-primary-400: #ff6880;
+  --color-primary-500: #fd3f5a;
+  --color-primary-600: #e81f40;
+  --color-primary-700: #c3163b;
+  --color-primary-800: #9f1536;
+  --color-primary-900: #861532;
+  --color-primary-950: #4a0515;
+
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d97706;
+
+  --color-error-50: #fef2f2;
+  --color-error-100: #fee2e2;
+  --color-error-500: #ef4444;
+  --color-error-600: #dc2626;
+
+  --color-sidebar-bg: #0f172a;
+  --color-sidebar-hover: #1e293b;
+  --color-sidebar-active: rgba(253, 63, 90, 0.15);
+
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+@layer base {
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  .dark ::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 3px; }
 }
